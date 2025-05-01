@@ -12,6 +12,6 @@ int main() {
         p++;
     }
     
-    printf("Length of the string: %d\n", length);
+    printf("Length of the string: %d\n", length - 1);
     return 0;
 }
