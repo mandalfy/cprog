@@ -1,5 +1,8 @@
 #include <stdio.h>
-#include <ctype.h>
+
+int is_whitespace(char ch) {
+    return ch == ' ' || ch == '\n' || ch == '\t' || ch == '\r' || ch == '\v' || ch == '\f';
+}
 
 int main() {
     char filename[100];
@@ -17,7 +20,8 @@ int main() {
     while ((ch = fgetc(fp)) != EOF) {
         char_count++;
         if (ch == '\n') line_count++;
-        if (!isspace(ch)) {
+
+        if (!is_whitespace(ch)) {
             if (!in_word) {
                 word_count++;
                 in_word = 1;
